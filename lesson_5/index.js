@@ -11,8 +11,8 @@ let sum = 0;
 let numPlus = 0;
 
 arr.forEach(function (num) {
-  sum += num;
   if (num > 0) {
+    sum += num;
     numPlus++;
   }
 });
