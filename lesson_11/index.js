@@ -94,3 +94,5 @@ console.log(database);
 console.log(database.users);
 console.log(admin);
 console.log(database.users[0].getAdminEmail());
+
+// Не уверен что я правильно понял суть задания но вроде всё работет)
