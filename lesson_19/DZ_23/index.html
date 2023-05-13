@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #categories {
+            float: left;
+            width: 20%;
+        }
+        
+        #products {
+            float: left;
+            width: 40%;
+        }
+        
+        #product-info {
+            float: left;
+            width: 40%;
+        }
+        
+        .category-item, .product-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="categories">
+        <h2>Категорії</h2>
+        <ul id="category-list"></ul>
+    </div>
+    
+    <div id="products">
+        <h2>Товари</h2>
+        <ul id="product-list"></ul>
+    </div>
+    
+    <div id="product-info">
+        <h2>Інформація про товар</h2>
+        <div id="info"></div>
+    </div>
+    
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
