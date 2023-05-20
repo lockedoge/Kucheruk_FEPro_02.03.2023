@@ -7,43 +7,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: inline-flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+
         #categories {
-            float: left;
-            width: 20%;
+            flex: 1;
+            margin-right: 20px;
+
         }
-        
+
         #products {
-            float: left;
-            width: 40%;
+            flex: 1;
+            margin-right: 20px;
         }
-        
+
         #product-info {
-            float: left;
-            width: 40%;
+            flex: 4;
+            margin-right: 20px;
         }
-        
-        .category-item, .product-item {
+
+        #order-form,
+        order-info {
+            flex: 3;
+        }
+
+        #order-info {
+            background-color: #f2f2f2;
+            padding: 20px;
+            padding-top: 0;
+            border-radius: 5px;
+        }
+
+        #order-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #order-info p {
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li {
             cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        .category-item,
+        .product-item {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .category-item:hover,
+        .product-item:hover {
+            background-color: #e0e0e0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 
 <body>
-    <div id="categories">
-        <h2>Категорії</h2>
-        <ul id="category-list"></ul>
+    <div id="container">
+        <div id="categories">
+            <h2>Категорії</h2>
+            <ul id="category-list"></ul>
+        </div>
+
+        <div id="products">
+            <h2>Товари</h2>
+            <ul id="product-list"></ul>
+        </div>
+
+        <div id="product-info">
+            <h2>Інформація про товар</h2>
+            <div id="info"></div>
+        </div>
+
+        <div id="order-form" style="display: none;">
+            <h2>Форма оформлення замовлення</h2>
+            <form id="order-form">
+                <label for="customer-name">ПІБ покупця:</label>
+                <input type="text" id="customer-name" required><br>
+
+                <label for="city">Місто:</label>
+                <select id="city" required>
+                    <option value="">Виберіть місто</option>
+                    <option value="Київ">Київ</option>
+                    <option value="Львів">Львів</option>
+                    <option value="Одеса">Одеса</option>
+                </select><br>
+
+                <label for="shipping">Склад Нової пошти для надсилання:</label>
+                <input type="text" id="shipping" required><br>
+
+                <label for="payment">Післяплата або оплата банківською карткою:</label>
+                <select id="payment" required>
+                    <option value="">Виберіть спосіб оплати</option>
+                    <option value="Післяплата">Післяплата</option>
+                    <option value="Оплата банківською карткою">Оплата банківською карткою</option>
+                </select><br>
+
+                <label for="quantity">Кількість продукції:</label>
+                <input type="number" id="quantity" required><br>
+
+                <label for="comment">Коментар до замовлення:</label>
+                <textarea id="comment"></textarea><br>
+
+                <button id="confirm-order">Підтвердити замовлення</button>
+            </form>
+        </div>
+        <div id="order-info" style="display: none;"></div>
     </div>
-    
-    <div id="products">
-        <h2>Товари</h2>
-        <ul id="product-list"></ul>
-    </div>
-    
-    <div id="product-info">
-        <h2>Інформація про товар</h2>
-        <div id="info"></div>
-    </div>
-    
+
     <script type="module" src="main.js"></script>
 </body>
 
